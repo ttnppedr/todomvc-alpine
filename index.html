@@ -62,7 +62,10 @@
 				</ul>
 			</section>
 
-			<footer class="footer">
+			<footer
+				class="footer"
+				x-show="todos.length"
+			>
 				<span class="todo-count"><strong x-text="active.length"></strong> item left</span>
 
 				<ul class="filters">
