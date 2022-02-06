@@ -29,7 +29,6 @@
 				<input id="toggle-all" class="toggle-all" type="checkbox">
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list">
-					<!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
 					<template x-for="todo in filteredTodos" :key="todo.id">
 						<li :class="{
 							editing: todo === editedTodo,
@@ -62,11 +61,10 @@
 					</template>
 				</ul>
 			</section>
-			<!-- This footer should be hidden by default and shown when there are todos -->
+
 			<footer class="footer">
-				<!-- This should be `0 items left` by default -->
 				<span class="todo-count"><strong x-text="active.length"></strong> item left</span>
-				<!-- Remove this if you don't implement routing -->
+
 				<ul class="filters">
 					<li>
 						<a @click.prevent="filter = 'all'" :class="{selected: filter === 'all'}" href="#/">All</a>
@@ -90,9 +88,6 @@
 
 		<footer class="info" x-show="todos.length">
 			<p>Double-click to edit a todo</p>
-			<!-- Remove the below line ↓ -->
-			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
-			<!-- Change this out with your name and url ↓ -->
 			<p>Created by <a href="http://todomvc.com">ttn</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
