@@ -26,8 +26,15 @@
 			</header>
 
 			<section class="main" x-show="todos.length">
-				<input id="toggle-all" class="toggle-all" type="checkbox">
+				<input
+					x-model="allComplete"
+					@click="toggleAllTodos"
+					id="toggle-all"
+					class="toggle-all"
+					type="checkbox"
+				>
 				<label for="toggle-all">Mark all as complete</label>
+
 				<ul class="todo-list">
 					<template x-for="todo in filteredTodos" :key="todo.id">
 						<li :class="{

@@ -24,6 +24,10 @@ window.todos = function () {
 			}[this.filter];
 		},
 
+		get allComplete() {
+			return this.todos.length === this.completed.length;
+		},
+
 		addTodo() {
 			if (!this.newTodo) {
 				return;
@@ -64,6 +68,12 @@ window.todos = function () {
 			let position = this.todos.indexOf(todo);
 
 			this.todos.splice(position, 1);
+		},
+
+		toggleAllTodos() {
+			let allComplete = this.allComplete;
+
+			this.todos.forEach(todo => todo.completed = ! allComplete);
 		}
 	};
 }
