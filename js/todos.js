@@ -6,6 +6,10 @@ window.todos = function () {
 			return this.todos.filter(todo => ! todo.completed);
 		},
 
+		get completed() {
+			return this.todos.filter(todo => todo.completed);
+		},
+
 		newTodo: '',
 
 		addTodo() {
