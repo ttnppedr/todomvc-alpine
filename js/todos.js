@@ -25,6 +25,10 @@ window.todos = function () {
 		},
 
 		addTodo() {
+			if (!this.newTodo) {
+				return;
+			}
+
 			this.todos.push({
 				id: this.todos.length + 1,
 				body: this.newTodo,
