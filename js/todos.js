@@ -1,6 +1,10 @@
 window.todos = function () {
 	return {
+		filter: 'all',
+
 		todos: [],
+
+		newTodo: '',
 
 		editedTodo: null,
 
@@ -12,7 +16,13 @@ window.todos = function () {
 			return this.todos.filter(todo => todo.completed);
 		},
 
-		newTodo: '',
+		get filteredTodos() {
+			return {
+				all: this.todos,
+				active: this.active,
+				completed: this.completed
+			}[this.filter];
+		},
 
 		addTodo() {
 			this.todos.push({
