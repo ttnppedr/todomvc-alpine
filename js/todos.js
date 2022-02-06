@@ -39,6 +39,10 @@ window.todos = function () {
 		},
 
 		editComplete(todo) {
+			if (todo.body.trim() === '') {
+				return this.deleteTodo(todo);
+			}
+
 			this.editedTodo = null
 		},
 
