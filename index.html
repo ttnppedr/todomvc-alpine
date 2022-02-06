@@ -66,7 +66,10 @@
 				class="footer"
 				x-show="todos.length"
 			>
-				<span class="todo-count"><strong x-text="active.length"></strong> item left</span>
+				<span class="todo-count">
+					<strong x-text="active.length"></strong>
+					<span x-text="active.length === 1 ? 'item': 'items'"></span> left
+				</span>
 
 				<ul class="filters">
 					<li>
